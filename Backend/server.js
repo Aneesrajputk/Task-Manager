@@ -7,6 +7,7 @@ const authRoutes= require("./routes/authRoutes")
 const app =express();
 const userRoutes= require("./routes/userRoutes")
 const tasksRoutes= require("./routes/taskRoutes")
+const reportRoutes= require("./routes/reportRoutes")
 // middleware to handle cors
 
 app.use(
@@ -26,7 +27,7 @@ app.use(express.json());
 app.use("/api/auth",authRoutes);
  app.use("/api/users",userRoutes);
 app.use("/api/tasks",tasksRoutes);
-// app.use("/api/reports",reportRoutes);
+app.use("/api/reports",reportRoutes);
 // Start server
 const PORT=process.env.PORT||5000;
 
